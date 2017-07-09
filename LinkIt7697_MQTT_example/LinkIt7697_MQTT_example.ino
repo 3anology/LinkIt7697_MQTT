@@ -27,6 +27,7 @@ char mqtt_server[] = "MQTT Broker IP address";
 char sub_topic[] = "7697 subscribe topic";
 char pub_topic[] = "7697 publish topic";
 char client_Id[] = "7697client-01-";
+char pub_msg[] = "hello world!";
  
 int status = WL_IDLE_STATUS;
 
@@ -58,9 +59,9 @@ void loop() {
     lastMsg = now;
     ++value;
 
-    Serial.print("Publish message ");
-    Serial.println(msg);
-    client.publish(pub_topic, "hello world");
+    Serial.print("Publish message: ");
+    Serial.println(pub_msg);
+    client.publish(pub_topic, pub_msg);
 }
 }
 
